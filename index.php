@@ -1,9 +1,9 @@
 <?php if (!empty($_POST)): ?>
-<div class="" style="" title="canddi-signature" id="canddi-signature"><table class="" style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
+<div class="" style="" title="signature" id="signature"><table class="" style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
   <tbody class="" style="">
     <tr class="" style="" valign="top">
       <td class="" style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
-        <a class="" style="" target="_blank" href="https://www.canddi.com/">
+        <a class="" style="" target="_blank" href="<?php echo htmlspecialchars($_POST["website"]); ?>">
           <img class="" src="https://s3.amazonaws.com/webapp.wisestamp.com/9r6oM48hQ2qiFloL42gB_canddi-logotype.png#logo" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
@@ -27,8 +27,8 @@
           </span>  |
           <span class="" style="white-space: nowrap; display: inline-block;">
             <span class="" style="color: rgb(69, 102, 142);">w:</span>
-            <a class="" href="https://www.canddi.com/" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
-              www.canddi.com
+            <a class="" href="<?php echo htmlspecialchars($_POST["website"]); ?>" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
+              <?php echo htmlspecialchars($_POST["website"]); ?>
             </a>
           </span>
         </div>
@@ -48,11 +48,11 @@
   </tbody>
 </table></div>
 <?php echo htmlspecialchars('
-<div class="" style="" title="canddi-signature" id="canddi-signature"><table class="" style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
+<div class="" style="" title="signature" id="signature"><table class="" style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
   <tbody class="" style="">
     <tr class="" style="" valign="top">
       <td class="" style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
-        <a class="" style="" target="_blank" href="https://www.canddi.com/">
+        <a class="" style="" target="_blank" href="' . htmlspecialchars($_POST["website"]) . '">
           <img class="" src="https://s3.amazonaws.com/webapp.wisestamp.com/9r6oM48hQ2qiFloL42gB_canddi-logotype.png#logo" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
@@ -76,8 +76,8 @@
           </span>  |
           <span class="" style="white-space: nowrap; display: inline-block;">
             <span class="" style="color: rgb(69, 102, 142);">w:</span>
-            <a class="" href="https://www.canddi.com/" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
-              www.canddi.com
+            <a class="" href="' . htmlspecialchars($_POST["website"]) . '" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
+              ' . htmlspecialchars($_POST["website"]) . '
             </a>
           </span>
         </div>
@@ -105,6 +105,7 @@
 		Landline: <input type="text" name="landline"><br>
 		Mobile: <input type="text" name="mobile"><br>
         Email: <input type="text" name="email"><br>
+		Website: <input type="text" name="website"><br>
         <input type="submit">
     </form>
 <?php endif; ?>
