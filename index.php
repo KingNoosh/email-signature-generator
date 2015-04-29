@@ -4,7 +4,7 @@
     <tr class="" style="" valign="top">
       <td class="" style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
         <a class="" style="" target="_blank" href="<?php echo htmlspecialchars($_POST["website"]); ?>">
-          <img class="" src="https://s3.amazonaws.com/webapp.wisestamp.com/9r6oM48hQ2qiFloL42gB_canddi-logotype.png#logo" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
+          <img class="" src="<?php echo htmlspecialchars($_POST["logo"]); ?>" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
       <td class="" style="font: 14px Arial; color: rgb(100, 100, 100); padding-left: 10px;">
@@ -53,7 +53,7 @@
     <tr class="" style="" valign="top">
       <td class="" style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
         <a class="" style="" target="_blank" href="' . htmlspecialchars($_POST["website"]) . '">
-          <img class="" src="https://s3.amazonaws.com/webapp.wisestamp.com/9r6oM48hQ2qiFloL42gB_canddi-logotype.png#logo" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
+          <img class="" src="' . htmlspecialchars($_POST["logo"]) . '" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
       <td class="" style="font: 14px Arial; color: rgb(100, 100, 100); padding-left: 10px;">
@@ -99,6 +99,7 @@
 '); ?>
 <?php else: ?>
     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?> method="post">
+		Logo: <input type="text" name="logo"><br>
         Name: <input type="text" name="name"><br>
 		Rank: <input type="text" name="rank"><br>
 		Company: <input type="text" name="company"><br>
