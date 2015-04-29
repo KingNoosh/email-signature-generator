@@ -58,21 +58,21 @@
       </td>
       <td class="" style="font: 14px Arial; color: rgb(100, 100, 100); padding-left: 10px;">
         <div class="" style="">
-          <b style="" class=""><?php echo htmlspecialchars($_POST["name"]); ?></b>
+          <b style="" class="">' . htmlspecialchars($_POST["name"]) . '</b>
           <br class="" style="">
-          <span class="" style=""><?php echo htmlspecialchars($_POST["rank"]); ?></span>,
-          <span class="" style=""><?php echo htmlspecialchars($_POST["company"]); ?></span>
+          <span class="" style="">' . htmlspecialchars($_POST["rank"]) . '</span>,
+          <span class="" style="">' . htmlspecialchars($_POST["company"]) . '</span>
         </div>
         <div class="" style="color: rgb(141, 141, 141); font-size: 13px; padding: 5px 0px;">
           <span class="" style="color: rgb(69, 102, 142); display: inline-block;">p:</span>
-          <a class="" target="_blank" href="tel:<?php echo htmlspecialchars($_POST["landline"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["landline"]); ?></a>  |
+          <a class="" target="_blank" href="tel:' . htmlspecialchars($_POST["landline"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["landline"]) . '</a>  |
           <span class="" style="display: inline-block;">
             <span class="" style="color: rgb(69, 102, 142);">m:</span>
-            <a class="" target="_blank" href="tel:<?php echo htmlspecialchars($_POST["mobile"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["mobile"]); ?></a>
+            <a class="" target="_blank" href="tel:' . htmlspecialchars($_POST["mobile"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["mobile"]) . '</a>
           </span>  |
           <span class="" style="display: inline-block;">
             <span class="" style="color: rgb(69, 102, 142);">e:</span>
-            <a class="" href="mailto:<?php echo htmlspecialchars($_POST["email"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["email"]); ?></a>
+            <a class="" href="mailto:' . htmlspecialchars($_POST["email"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["email"]) . '</a>
           </span>  |
           <span class="" style="white-space: nowrap; display: inline-block;">
             <span class="" style="color: rgb(69, 102, 142);">w:</span>
