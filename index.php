@@ -10,7 +10,21 @@
 <body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-<?php if(!empty($_POST)) { ?>
+<?php
+$logo = $_POST["logo"];
+$name = $_POST["name"];
+$rank = $_POST["rank"];
+$company = $_POST["company"];
+$landline = $_POST["landline"];
+$mobile = $_POST["mobile"];
+$email = $_POST["email"];
+$website = $_POST["website"];
+$linkedin = $_POST["linkedin"];
+$twitter = $_POST["twitter"];
+$youtube = $_POST["youtube"];
+$github = $_POST["github"];
+
+if(!empty($_POST)) { ?>
 <div class="container">
 <div class="row">
 <h1>Email Signature Generator</h1>
@@ -18,65 +32,65 @@
 <div title="signature" id="signature"><table style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
   <tbody>
     <tr valign="top">
-	<?php if(!empty($_POST["logo"])) { ?>
+	<?php if(!empty($logo)) { ?>
       <td style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
-        <a target="_blank" href="<?php echo htmlspecialchars($_POST["website"]); ?>">
-          <img src="<?php echo htmlspecialchars($_POST["logo"]); ?>" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
+        <a target="_blank" href="<?php echo htmlspecialchars($website); ?>">
+          <img src="<?php echo htmlspecialchars($logo); ?>" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
 	<?php }; ?>
       <td style="font: 14px Arial; color: rgb(100, 100, 100); padding-left: 10px;">
         <div>
-		<?php if(!empty($_POST["name"])) { ?>
-          <b><?php echo htmlspecialchars($_POST["name"]); ?></b>
+		<?php if(!empty($name)) { ?>
+          <b><?php echo htmlspecialchars($name); ?></b>
           <br>
 		<?php }; ?>
-		<?php if(!empty($_POST["rank"])) { ?>
-          <span><?php echo htmlspecialchars($_POST["rank"]); ?></span>,
+		<?php if(!empty($rank)) { ?>
+          <span><?php echo htmlspecialchars($rank); ?></span>,
 		<?php }; ?>
-		<?php if(!empty($_POST["company"])) { ?>
-          <span><?php echo htmlspecialchars($_POST["company"]); ?></span>
+		<?php if(!empty($company)) { ?>
+          <span><?php echo htmlspecialchars($company); ?></span>
 		<?php }; ?>
         </div>
         <div style="color: rgb(141, 141, 141); font-size: 13px; padding: 5px 0px;">
-		<?php if(!empty($_POST["landline"])) { ?>
+		<?php if(!empty($landline)) { ?>
           <span style="color: rgb(69, 102, 142); display: inline-block;">p:</span>
-          <a target="_blank" href="tel:<?php echo htmlspecialchars($_POST["landline"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["landline"]); ?></a>  |
+          <a target="_blank" href="tel:<?php echo htmlspecialchars($landline); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($landline); ?></a>  |
 		<?php }; ?>
-		<?php if(!empty($_POST["mobile"])) { ?>
+		<?php if(!empty($mobile)) { ?>
           <span style="display: inline-block;">
             <span style="color: rgb(69, 102, 142);">m:</span>
-            <a target="_blank" href="tel:<?php echo htmlspecialchars($_POST["mobile"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["mobile"]); ?></a>
+            <a target="_blank" href="tel:<?php echo htmlspecialchars($mobile); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($mobile); ?></a>
           </span>  |
 		<?php }; ?>
-		<?php if(!empty($_POST["email"])) { ?>
+		<?php if(!empty($email)) { ?>
           <span style="display: inline-block;">
             <span style="color: rgb(69, 102, 142);">e:</span>
-            <a href="mailto:<?php echo htmlspecialchars($_POST["email"]); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($_POST["email"]); ?></a>
+            <a href="mailto:<?php echo htmlspecialchars($email); ?>" style="color: rgb(141, 141, 141); text-decoration: none;"><?php echo htmlspecialchars($email); ?></a>
           </span>  |
 		<?php }; ?>
-		<?php if(!empty($_POST["website"])) { ?>
+		<?php if(!empty($website)) { ?>
           <span style="white-space: nowrap; display: inline-block;">
             <span style="color: rgb(69, 102, 142);">w:</span>
-            <a href="<?php echo htmlspecialchars($_POST["website"]); ?>" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
-              <?php echo htmlspecialchars($_POST["website"]); ?>
+            <a href="<?php echo htmlspecialchars($website); ?>" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
+              <?php echo htmlspecialchars($website); ?>
             </a>
           </span>
 		<?php }; ?>
         </div>
         <div style="margin-top: 5px;">
-		<?php if(!empty($_POST["linkedin"])) { ?>
-          <a href="<?php echo htmlspecialchars($_POST["linkedin"]); ?>" target="_blank" style="text-decoration: none;">
+		<?php if(!empty($linkedin)) { ?>
+          <a href="<?php echo htmlspecialchars($linkedin); ?>" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/linkedin.png" height="16" width="16">
           </a>&nbsp;
 		<?php }; ?>
-		<?php if(!empty($_POST["twitter"])) { ?>
-          <a href="<?php echo htmlspecialchars($_POST["twitter"]); ?>" target="_blank" style="text-decoration: none;">
+		<?php if(!empty($twitter)) { ?>
+          <a href="<?php echo htmlspecialchars($twitter); ?>" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/twitter.png" height="16" width="16">
           </a>&nbsp;
 		<?php }; ?>
-		<?php if(!empty($_POST["youtube"])) { ?>
-          <a href="<?php echo htmlspecialchars($_POST["youtube"]); ?>" target="_blank" style="text-decoration: none;">
+		<?php if(!empty($youtube)) { ?>
+          <a href="<?php echo htmlspecialchars($youtube); ?>" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/youtube.png" height="16" width="16">
           </a>&nbsp;
 		<?php }; ?>
@@ -94,65 +108,65 @@
 <div title="signature" id="signature"><table style="width: 470px;" border="0" cellpadding="0" cellspacing="0" width="470">
   <tbody>
     <tr valign="top">');
-	if(!empty($_POST["logo"])) { echo htmlspecialchars('
+	if(!empty($logo)) { echo htmlspecialchars('
       <td style="border-right: 1px solid rgb(69, 102, 142); padding-right: 10px; width: 10px;">
-        <a target="_blank" href="' . htmlspecialchars($_POST["website"]) . '">
-          <img src="' . htmlspecialchars($_POST["logo"]) . '" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
+        <a target="_blank" href="' . htmlspecialchars($website) . '">
+          <img src="' . htmlspecialchars($logo) . '" alt="photo" style="border-radius: 4px; width: 120px; max-width: 120px;">
         </a>
       </td>
 	'); }; echo htmlspecialchars('
       <td style="font: 14px Arial; color: rgb(100, 100, 100); padding-left: 10px;">
         <div>');
-		if(!empty($_POST["name"])) { echo htmlspecialchars('
-          <b>' . htmlspecialchars($_POST["name"]) . '</b>
+		if(!empty($name)) { echo htmlspecialchars('
+          <b>' . htmlspecialchars($name) . '</b>
           <br>
 		'); };
-		if(!empty($_POST["rank"])) { echo htmlspecialchars('
-          <span>' . htmlspecialchars($_POST["rank"]) . '</span>,
+		if(!empty($rank)) { echo htmlspecialchars('
+          <span>' . htmlspecialchars($rank) . '</span>,
 		'); };
-		if(!empty($_POST["company"])) { echo htmlspecialchars('
-          <span>' . htmlspecialchars($_POST["company"]) . '</span>
+		if(!empty($company)) { echo htmlspecialchars('
+          <span>' . htmlspecialchars($company) . '</span>
 		'); }; echo htmlspecialchars('
         </div>
         <div style="color: rgb(141, 141, 141); font-size: 13px; padding: 5px 0px;">');
-		if(!empty($_POST["landline"])) { echo htmlspecialchars('
+		if(!empty($landline)) { echo htmlspecialchars('
           <span style="color: rgb(69, 102, 142); display: inline-block;">p:</span>
-          <a target="_blank" href="tel:' . htmlspecialchars($_POST["landline"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["landline"]) . '</a>  |
+          <a target="_blank" href="tel:' . htmlspecialchars($landline) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($landline) . '</a>  |
 		'); };
-		if(!empty($_POST["mobile"])) { echo htmlspecialchars('
+		if(!empty($mobile)) { echo htmlspecialchars('
           <span style="display: inline-block;">
             <span style="color: rgb(69, 102, 142);">m:</span>
-            <a target="_blank" href="tel:' . htmlspecialchars($_POST["mobile"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["mobile"]) . '</a>
+            <a target="_blank" href="tel:' . htmlspecialchars($mobile) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($mobile) . '</a>
           </span>  |
 		'); };
-		if(!empty($_POST["email"])) { echo htmlspecialchars('
+		if(!empty($email)) { echo htmlspecialchars('
           <span style="display: inline-block;">
             <span style="color: rgb(69, 102, 142);">e:</span>
-            <a href="mailto:' . htmlspecialchars($_POST["email"]) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($_POST["email"]) . '</a>
+            <a href="mailto:' . htmlspecialchars($email) . '" style="color: rgb(141, 141, 141); text-decoration: none;">' . htmlspecialchars($email) . '</a>
           </span>  |
 		'); };
-		if(!empty($_POST["website"])) { echo htmlspecialchars('
+		if(!empty($website)) { echo htmlspecialchars('
           <span style="white-space: nowrap; display: inline-block;">
             <span style="color: rgb(69, 102, 142);">w:</span>
-            <a href="' . htmlspecialchars($_POST["website"]) . '" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
-              ' . htmlspecialchars($_POST["website"]) . '
+            <a href="' . htmlspecialchars($website) . '" target="_blank" style="color: rgb(141, 141, 141); text-decoration: none;">
+              ' . htmlspecialchars($website) . '
             </a>
           </span>
 		'); }; echo htmlspecialchars('
         </div>
         <div style="margin-top: 5px;">');
-		if(!empty($_POST["linkedin"])) { echo htmlspecialchars('
-          <a href="' . htmlspecialchars($_POST["linkedin"]) . '" target="_blank" style="text-decoration: none;">
+		if(!empty($linkedin)) { echo htmlspecialchars('
+          <a href="' . htmlspecialchars($linkedin) . '" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/linkedin.png" height="16" width="16">
           </a>&nbsp;
 		'); };
-		if(!empty($_POST["twitter"])) { echo htmlspecialchars('
-          <a href="' . htmlspecialchars($_POST["twitter"]) . '" target="_blank" style="text-decoration: none;">
+		if(!empty($twitter)) { echo htmlspecialchars('
+          <a href="' . htmlspecialchars($twitter) . '" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/twitter.png" height="16" width="16">
           </a>&nbsp;
 		'); };
-		if(!empty($_POST["youtube"])) { echo htmlspecialchars('
-          <a href="' . htmlspecialchars($_POST["youtube"]) . '" target="_blank" style="text-decoration: none;">
+		if(!empty($youtube)) { echo htmlspecialchars('
+          <a href="' . htmlspecialchars($youtube) . '" target="_blank" style="text-decoration: none;">
             <img src="https://s3.amazonaws.com/images.wisestamp.com/icons/youtube.png" height="16" width="16">
           </a>&nbsp;
 		'); };
